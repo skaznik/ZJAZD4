@@ -2,3 +2,94 @@ morfeusz.wszib.edu.pl
 
 Management Studio
 Azure Data Studio
+//
+use AdventureWorks
+
+--     DB-SCHEMA-TABLE
+
+ select ProductID, Name,ProductNumber,Color,StandardCost from Production.Product
+
+  ORDER BY name
+
+    select ProductID, Name,ProductNumber,Color,StandardCost from Production.Product
+ where Color = 'black'
+//
+
+se AdventureWorks
+
+--     DB-SCHEMA-TABLE
+
+
+
+  select ProductID, Name,ProductNumber,Color,StandardCost from Production.Product
+
+  ORDER BY name
+
+   select ProductID, Name,ProductNumber,Color,StandardCost from Production.Product
+where Color = 'black'
+
+where ProductCategoryID < 7
+
+
+select * from Production.ProductSubcategory
+where Name = 'Mountain Bikes'
+
+select * from Production.ProductSubcategory
+where Name like '%Bikes'
+
+
+select * from Production.ProductSubcategory
+where Name like 'c%'
+
+
+select * from Production.Product
+where name like 'classic vest, [A-Z]'
+
+select name, color from Production.Product
+where Color = 'black'
+
+
+select name, color from Production.Product
+where not Color = 'red' and ProductSubcategoryID<2
+
+select name, color from Production.Product
+where not Color in ('black','silver','red')
+
+select ProductSubcategoryID, color from Production.Product
+where (ProductSubcategoryID = 2 and not Color = 'red')
+or (ProductSubcategoryID=1 and not Color = 'black')
+order by ProductSubcategoryID, Color DESC
+
+select * from Production.ProductSubcategory
+where ProductSubcategoryID >=1 and ProductSubcategoryID < 4
+
+
+select * from Production.ProductSubcategory
+where ProductSubcategoryID between 1 and 4
+
+
+select * from Sales.SalesOrderHeader
+where OrderDate between '20040501' and '20040507'
+
+select * from Production.Product
+where color is not null
+
+select isnull(color,'no color') from Production.Product
+where color is null
+
+select distinct color as Kolor from Production.Product
+where color is not null
+
+select top 10 *from Production.Product
+order by ProductID
+
+select top 10 percent* from HumanResources.Employee
+order by ModifiedDate desc
+
+select FirstName +' ' + lastname as 'Imię i Nazwisko'  from Person.Contact
+
+select LEFT(FirstName,1) + LEFT(lastname, 1) as ' inicjały' from person.contact
+
+select count(*) as ile from person.contact
+
+select *from test
