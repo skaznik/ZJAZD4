@@ -1,0 +1,4 @@
+morfeusz.wszib.edu.pl
+
+Management Studio
+Azure Data Studio
